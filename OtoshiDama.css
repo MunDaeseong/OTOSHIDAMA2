@@ -1,0 +1,71 @@
+
+  body {
+    margin: 0;
+    height: 100vh;
+    font-family: "Hiragino Mincho ProN", serif;
+    background: url("bg.jpg") center / cover no-repeat;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+  /* 半透明カード */
+  .card {
+    background: rgba(255, 255, 255, 0.88);
+    padding: 32px 24px;
+    border-radius: 20px;
+    text-align: center;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.25);
+    max-width: 320px;
+    width: 90%;
+  }
+
+  h1 {
+    margin-top: 0;
+    font-size: 22px;
+    color: #c40000;
+  }
+
+  p {
+    font-size: 14px;
+    margin-bottom: 24px;
+  }
+
+  button {
+    font-size: 16px;
+    padding: 12px 24px;
+    border-radius: 30px;
+    border: none;
+    background: linear-gradient(135deg, #ff5f5f, #ff9a9a);
+    color: white;
+    cursor: pointer;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.2);
+    transition: transform 0.15s;
+  }
+
+  button:active {
+    transform: scale(0.95);
+  }
+
+  /* チケット表示 */
+  .ticket {
+    display: none;
+    margin-top: 24px;
+    animation: fadeIn 0.8s ease forwards;
+  }
+
+  .ticket img {
+    width: 100%;
+    border-radius: 12px;
+  }
+
+  @keyframes fadeIn {
+    from {
+      opacity: 0;
+      transform: translateY(10px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
