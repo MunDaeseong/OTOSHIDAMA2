@@ -3,22 +3,11 @@
     margin: 0;
     height: 100vh;
     font-family: "Hiragino Mincho ProN", serif;
-    background: url("bg.jpg") center / cover no-repeat;
     display: flex;
     justify-content: center;
     align-items: center;
   }
 
-  /* 半透明カード */
-  .card {
-    background: rgba(255, 255, 255, 0.88);
-    padding: 32px 24px;
-    border-radius: 20px;
-    text-align: center;
-    box-shadow: 0 10px 30px rgba(0,0,0,0.25);
-    max-width: 320px;
-    width: 90%;
-  }
 
   h1 {
     margin-top: 0;
@@ -45,18 +34,6 @@
 
   button:active {
     transform: scale(0.95);
-  }
-
-  /* チケット表示 */
-  .ticket {
-    display: none;
-    margin-top: 24px;
-    animation: fadeIn 0.8s ease forwards;
-  }
-
-  .ticket img {
-    width: 100%;
-    border-radius: 12px;
   }
 
   @keyframes fadeIn {
