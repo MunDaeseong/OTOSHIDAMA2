@@ -1,19 +1,19 @@
-const correctPassword = "0817";
+const CORRECT = "0817";
+const giftURL = "https://gift.starbucks.co.jp/"; // 本物に差し替え
 
-document.getElementById("enterBtn").addEventListener("click", () => {
-  const input = document.getElementById("password").value;
-  if (input === correctPassword) {
-    document.getElementById("gate").style.display = "none";
-    document.getElementById("main").classList.remove("hidden");
+function check() {
+  const v = document.getElementById("password").value.trim();
+  if (v === CORRECT) {
+    document.getElementById("gate").classList.add("hidden");
+    document.getElementById("card").classList.remove("hidden");
   } else {
-    alert("合言葉が違うみたい…");
+    alert("ちがうみたい…");
   }
-});
+}
 
-document.getElementById("giftBtn").addEventListener("click", () => {
-  const ok = confirm("お年玉、開ける？");
-  if (ok) {
-    // ★ここをスタバeGiftのURLに変更
-    window.location.href = "https://gift.starbucks.co.jp/";
-  }
+// HTMLが読み込まれてから実行
+document.addEventListener("DOMContentLoaded", () => {
+  document.getElementById("giftBtn").onclick = () => {
+    window.location.href = giftURL;
+  };
 });
