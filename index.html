@@ -1,18 +1,67 @@
 <!DOCTYPE html>
 <html lang="ja">
 <head>
-  <meta charset="UTF-8">
-  <title>2026 Happy New Year 🎍</title>
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <link rel="stylesheet" href="OtoshiDama.css">
-  <script src="OtoshiDama.js" defer></script>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Happy New Year 🎍</title>
+
+  <!-- Google Font -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css?family=Sacramento&display=swap" rel="stylesheet">
+
+  <!-- CSS -->
+  <link rel="stylesheet" href="style.css" />
 </head>
 
 <body>
-  <div class="card">
-    <h1>💩太郎くん💩</h1>
-    <p>いつもありがとう<br>気まぐれですがあげます</p>
-    <button id="giftBtn">表示する</button>
+  <div class="bg-anim"></div>
+
+  <div class="floating">
+    <span>✨</span>
+    <span>🎁</span>
+    <span>💖</span>
+    <span>🌸</span>
+    <span>🎀</span>
   </div>
+
+  <!-- 合言葉 -->
+  <div class="gate" id="gate">
+    <h2>合言葉を入れてね</h2>
+    <input id="password" placeholder="ひみつ…" />
+    <br />
+    <button onclick="check()">OPEN</button>
+    <div class="hint"></div>
+  </div>
+
+  <!-- メインカード -->
+  <div class="card hidden" id="card">
+    <h1 class="title">Happy New Year</h1>
+    <p class="message">
+      今年もたくさん笑えますように。<br />
+      ささやかなお年玉です🎍
+    </p>
+    <button id="giftBtn">お年玉をひらく</button>
+  </div>
+
+  <!-- JS -->
+  <script>
+    const CORRECT = "0817";
+    const giftURL = "https://gift.starbucks.co.jp/"; // ★本物に差し替え
+
+    function check() {
+      const v = document.getElementById("password").value.trim();
+      if (v === CORRECT) {
+        document.getElementById("gate").classList.add("hidden");
+        document.getElementById("card").classList.remove("hidden");
+      } else {
+        alert("ちがうみたい…");
+      }
+    }
+
+    document.getElementById("giftBtn").onclick = () => {
+      window.location.href = giftURL;
+    };
+  </script>
 </body>
 </html>
